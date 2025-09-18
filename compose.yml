@@ -10,12 +10,12 @@ services:
         source: "./php-apache/000-default.conf"
         target: "/etc/apache2/sites-enabled/000-default.conf"
       - type: bind
-        source: "./php-apache/app/public"
-        target: "/var/www/docker_review/public"
+        source: "./php-apache/app"
+        target: "/var/www/docker_review"
     depends_on:
       - review-mysql
   review-mysql:
-    image: mysql:8
+    image: mysql:8.0
     platform: linux/x86_64
     environment:
       - MYSQL_ROOT_PASSWORD=e2QNqCUd
